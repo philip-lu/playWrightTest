@@ -1,0 +1,12 @@
+FROM mcr.microsoft.com/playwright:v1.32.0-focal
+USER root
+WORKDIR /usr/app
+RUN mkdir /tests
+COPY . /usr/app
+
+RUN npm install
+RUN npx @playwright/test install
+
+RUN npx playwright install-deps
+RUN npx playwright test
+

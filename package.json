@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:qa": "cross-env test_env=qa npx playwright test --grep '@smoke' --project=chromium",
+    "test:qa": "cross-env test_env=qa npx playwright test --grep '@smoke'",
     "test:dev": "test_env=dev npx playwright test --grep '@smoke' --project=chromium --debug"
   },
   "keywords": [],

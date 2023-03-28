@@ -6,8 +6,10 @@ import { ENV } from '../envconfigs/envs';
 test('loginlogout @smoke', async ({ page }) => {
   const loginPage = new LoginPage(page);
   //console.log(process.env.BASE_URL)
+
   await page.goto('/');
   await expect(loginPage.heading).toBeVisible();
+  
   await page.locator('#onetrust-accept-btn-handler').click();
   await page.getByRole('button', { name: 'Log In' }).first().click();
   await page.getByPlaceholder('yours@example.com').click();

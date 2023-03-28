@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "testqa": "npx playwright test --project=chromium -g 'login' --debug",
-    "test": "test_env=qa npx playwright test --project=chromium -g 'login' --debug"
+    "test:qa": "test_env=qa npx playwright test --grep '@smoke' --project=chromium",
+    "test:dev": "test_env=dev npx playwright test --grep '@smoke' --project=chromium --debug"
   },
   "keywords": [],
   "author": "",

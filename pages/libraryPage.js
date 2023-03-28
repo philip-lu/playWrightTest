@@ -1,8 +1,8 @@
-exports.LibraryPage = class LibraryPage {
+export default class LibraryPage {
   constructor(page) {
     this.page = page;
-    this.heading = page.getByRole("heading", {
-      name: "Welcome to your content library",
+    this.heading = page.getByRole('heading', {
+      name: 'Welcome to your content library'
     });
   }
 };

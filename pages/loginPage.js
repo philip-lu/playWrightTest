@@ -5,4 +5,4 @@ export default class LoginPage {
       name: 'Welcome to eBooks+'
     });
   }
-};
+}

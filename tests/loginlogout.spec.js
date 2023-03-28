@@ -1,14 +1,11 @@
 import { test, expect } from '@playwright/test';
 import LoginPage from '../pages/loginPage';
 import LibraryPage from '../pages/libraryPage';
-import { ENV } from '../envs/env';
+import { ENV } from '../envconfigs/envs';
 
 test('loginlogout @smoke', async ({ page }) => {
-
   const loginPage = new LoginPage(page);
-
-  console.log(process.env.BASE_URL)
-
+  //console.log(process.env.BASE_URL)
   await page.goto('/');
   await expect(loginPage.heading).toBeVisible();
   await page.locator('#onetrust-accept-btn-handler').click();

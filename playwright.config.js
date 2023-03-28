@@ -1,10 +1,9 @@
+// @ts-check
 const { defineConfig, devices } = require('@playwright/test');
 import dotenv from 'dotenv';
 import path from 'path';
 
-dotenv.config({
-  path: path.resolve(__dirname, '/envconfigs', `.env.${process.env.test_env}`)
-});
+dotenv.config({ path: path.resolve(__dirname, 'envconfigs', `.env.${process.env.test_env}`) });
 
 module.exports = defineConfig({
   testDir: './tests',
@@ -25,6 +24,10 @@ module.exports = defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry'
+  },
+  expect: {
+    // Maximum time expect() should wait for the condition to be met.
+    timeout: 7000
   },
 
   /* Configure projects for major browsers */

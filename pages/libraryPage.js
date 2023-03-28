@@ -5,4 +5,4 @@ export default class LibraryPage {
       name: 'Welcome to your content library'
     });
   }
-};
+}

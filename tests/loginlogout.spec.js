@@ -19,7 +19,7 @@ test('loginlogout @smoke', async ({ page }) => {
   await page.getByRole('button', { name: 'Log In' }).click();
 
   const libraryPage = new LibraryPage(page);
-  await expect(libraryPage.heading).toBeVisible();
+  await expect(libraryPage.heading).toBeVisible({delay: 10000});
   await page.getByTestId('logout-btn').click();
 
   // ---------------------

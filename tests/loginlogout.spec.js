@@ -12,7 +12,7 @@ test('loginlogout @smoke', async ({ page }) => {
   await page.locator('#onetrust-accept-btn-handler').click();
   await page.getByRole('button', {name: 'Log In'}).first().click();
   await page.getByPlaceholder('User ID / Email').fill(ENV.USERNAME);
-  await page.getByPlaceholder('Password').fill(ENV.PASSWORD);
+  await page.getByPlaceholder('P').fill(ENV.PASSWORD);
   await page.getByRole('button', {name: 'Log In'}).click();
 
   //await page.waitForSelector('h1');

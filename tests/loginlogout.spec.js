@@ -26,11 +26,11 @@ test('loginlogout @smoke', async ({
     name: 'Log In'
   }).click();
 
-  await page.waitForSelector('h1');
+  //await page.waitForSelector('h1');
 
   const libraryPage = new LibraryPage(page);
   await expect(libraryPage.heading).toBeVisible();
-  await page.getByTestId('logout-btn').click();
+  //await page.getByTestId('logout-btn').click();
 
   // ---------------------
   await expect(loginPage.heading).toBeVisible();

@@ -15,7 +15,7 @@ test('loginlogout @smoke', async ({ page }) => {
 
   await page.locator('#onetrust-accept-btn-handler').click();
   await page.getByRole('button', {name: 'Log In'}).first().click();
-  await page.getByPlaceholder('User ID / Email').fill(ENV.PASSWORD);
+  await page.getByPlaceholder('User ID / Email').fill(ENV.USERNAME);
   await page.getByPlaceholder('P').fill(ENV.PASSWORD);
   //await page.screenshot({ path: 'test-results/screenshot.png', fullPage: true });
   await page.getByRole('button', {name: 'Log In'}).click();

@@ -7,8 +7,8 @@ test('loginlogout @smoke', async ({ page }) => {
   const loginPage = new LoginPage(page);
 
   console.log(process.env.BASE_URL);
-  console.log(ENV.USERNAME); 
-  console.log(ENV.PASSWORD); 
+  console.log("USERNAME is " + ENV.USERNAME); 
+  console.log("PASSWORD is " + ENV.PASSWORD); 
   
   await page.goto('/');
   await expect(loginPage.heading).toBeVisible();

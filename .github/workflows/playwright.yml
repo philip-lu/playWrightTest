@@ -7,7 +7,7 @@ on:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     env:
       USERNAME: fufud@inboxbear.com
       PASSWORD: ${{ secrets.PASSWORD }}

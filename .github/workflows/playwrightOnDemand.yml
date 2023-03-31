@@ -1,4 +1,4 @@
-name: OnDemand_Tests
+name: RunTests_onDemand
 on: [workflow_dispatch]
 jobs:
   test:

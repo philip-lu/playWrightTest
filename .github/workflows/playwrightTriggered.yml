@@ -1,4 +1,4 @@
-name: Triggered Tests
+name: Triggered_Tests
 on: [repository_dispatch]
 jobs:
   test:

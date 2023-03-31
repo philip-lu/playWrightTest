@@ -4,5 +4,7 @@ export default class LibraryPage {
     this.heading = page.getByRole('heading', {
       name: 'Welcome to your content library'
     });
+    this.logoutButton = page.getByTestId('logout-btn');
+    this.emptyLibraryMessage = page.getByTestId('entitlement-list-empty');
   }
 }

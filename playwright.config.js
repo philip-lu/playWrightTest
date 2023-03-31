@@ -16,12 +16,18 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: process.env.CI ? 'github' : 'list',
+  reporter: [[process.env.CI ? 'github' : 'list'],['line'],['html']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: process.env.BASE_URL,
-
+    extraHTTPHeaders: {
+      // We set this header per GitHub guidelines.
+      //'Accept': 'application/json, text/plain, */*',
+      // Add authorization token to all requests.
+      // Assuming personal access token available in the environment.
+      //'Authorization': `Bearer ${process.env.API_TOKEN}`
+    },
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     screenshot: 'only-on-failure'

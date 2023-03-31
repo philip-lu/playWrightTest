@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:qa": "cross-env test_env=qa npx playwright test --grep '@smoke' --project=chromium",
-    "test:dev": "test_env=dev npx playwright test --grep '@smoke' --project=chromium"
+    "test:qa": "cross-env test_env=qa npx playwright test --grep '@uismoke' --project=chromium",
+    "test:dev": "test_env=dev npx playwright test --grep '@uismoke' --project=chromium"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +13,6 @@
   "devDependencies": {
     "@playwright/test": "^1.32.1",
     "cross-env": "^7.0.3",
-    "jslint": "^0.12.1",
     "prettier": "^2.8.7"
   },
   "dependencies": {

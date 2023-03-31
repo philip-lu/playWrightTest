@@ -3,7 +3,7 @@ import LoginPage from '../pages/loginPage';
 import SSOPage from '../pages/ssoPage';
 import LibraryPage from '../pages/libraryPage';
 import AcceptCookiesBanner from '../commonElements/acceptCookiesBanner';
-import { ENV } from '../envconfigs/envs';
+//import { ENV } from '../envconfigs/envs';
 import { USERS } from '../users/users';
 
 test('Verify that user is able to log in and log out @uismoke', async ({ page }) => {

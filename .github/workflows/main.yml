@@ -1,0 +1,9 @@
+name: workflow_02
+on: [repository_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Triggering Wokflow 2"
+      - name: Checkout
+        uses: actions/checkout@v2

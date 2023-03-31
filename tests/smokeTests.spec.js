@@ -4,8 +4,9 @@ import SSOPage from '../pages/ssoPage';
 import LibraryPage from '../pages/libraryPage';
 import AcceptCookiesBanner from '../commonElements/acceptCookiesBanner';
 import { ENV } from '../envconfigs/envs';
+import { USERS } from '../users/users';
 
-test('loginlogout @uismoke', async ({ page }) => {
+test('Verify that user is able to log in and log out @uismoke', async ({ page }) => {
   /* const browser = await chromium.launch();
   const context = await browser.newContext();
   const page = await context.newPage(); */
@@ -31,8 +32,10 @@ test('loginlogout @uismoke', async ({ page }) => {
 
   // User logs in
   const ssoPage = new SSOPage(page);
-  await ssoPage.usernameInput.fill(ENV.USERNAME);
-  await ssoPage.passwordInput.fill(ENV.PASSWORD);
+  /* await ssoPage.usernameInput.fill(ENV.USERNAME);
+  await ssoPage.passwordInput.fill(ENV.PASSWORD); */
+  await ssoPage.usernameInput.fill(USERS.USERNAME_1);
+  await ssoPage.passwordInput.fill(USERS.PASSWORD_1);
   await ssoPage.loginButton.click();
 
   // Library page opens

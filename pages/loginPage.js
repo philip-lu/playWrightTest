@@ -8,11 +8,16 @@ export default class LoginPage {
     });
 
     //Log In buttons
-    const loginButtonXpath = '';
+    /* const loginButtonXpath = "//button[@data-testid='login-btn']";
     this.headerLoginButton = page.locator("//header//button[contains(text(),'Log in')]");
-    this.mainLoginButton = page.locator("//button[@data-testid='login-btn']").first();
+    this.mainLoginButton = page.locator(`${loginButtonXpath}`).first();
     this.footerLoginButton = page.locator(
-      "//div[@class='footer-buttons']//button[@data-testid='login-btn']"
-    );
+      `//div[@class='footer-buttons']//${loginButtonXpath}`
+    ); */
+
+    const loginButtons = page.locator('button', {name: 'Log In'});
+    this.headerLoginButton = loginButtons.nth(0)
+    this.mainLoginButton = loginButtons.nth(1)
+    this.footerLoginButton = loginButtons.nth(2)
   }
 }

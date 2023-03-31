@@ -32,11 +32,7 @@ test('Verify that user is able to log in and log out @uismoke', async ({ page })
 
   // User logs in
   const ssoPage = new SSOPage(page);
-  /* await ssoPage.usernameInput.fill(ENV.USERNAME);
-  await ssoPage.passwordInput.fill(ENV.PASSWORD); */
-  await ssoPage.usernameInput.fill(USERS.USERNAME_1);
-  await ssoPage.passwordInput.fill(USERS.PASSWORD_1);
-  await ssoPage.loginButton.click();
+  await ssoPage.logIn(USERS.USERNAME_1, USERS.PASSWORD_1)
 
   // Library page opens
   const libraryPage = new LibraryPage(page);

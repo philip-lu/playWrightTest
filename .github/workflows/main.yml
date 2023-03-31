@@ -1,5 +1,7 @@
 name: workflow_02
-on: [repository_dispatch]
+on: 
+  pull_request: 
+    branches: [main]
 jobs:
   test:
     runs-on: ubuntu-latest

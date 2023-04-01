@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs: 
       environment:
-        description: Set dev, qa or prod
+        description: dev, qa or prod?
         required: true
         type: string
 jobs:

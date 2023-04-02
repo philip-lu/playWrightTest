@@ -28,7 +28,7 @@ test('Verify that user is able to log in and log out @uismoke', async ({ page })
   // User accepts the cookies and clicks Log In button
   const acceptCookiesBanner = new AcceptCookiesBanner(page);
   await acceptCookiesBanner.acceptAllButton.click();
-  await loginPage.mainLoginButton.click();
+  await loginPage.footerLoginButton.click();
 
   // User logs in
   const ssoPage = new SSOPage(page);

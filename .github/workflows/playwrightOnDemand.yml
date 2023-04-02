@@ -1,7 +1,7 @@
 name: RunTests_On_Demand
 on: [workflow_dispatch]
 jobs:
-  test:
+  tests-run:
     timeout-minutes: 60
     runs-on: windows-latest
     ##env:
@@ -19,7 +19,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
       - name: Run Playwright tests
-        run: npm run test:dev
+        run: npm run test:qa
       - uses: actions/upload-artifact@v3
         if: always()
         with:

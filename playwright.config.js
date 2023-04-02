@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 import { defineConfig, devices } from '@playwright/test';
-import dotenv from 'dotenv';
-import path from 'path';
+//import dotenv from 'dotenv';
+//import path from 'path';
 
-dotenv.config({ path: path.resolve(__dirname, 'envconfigs', `.env.${process.env.test_env}`) });
+//dotenv.config({ path: path.resolve(__dirname, 'envconfigs', `.env.${process.env.test_env}`) });
 
 module.exports = defineConfig({
   testDir: './tests',

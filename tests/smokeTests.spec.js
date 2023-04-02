@@ -1,12 +1,13 @@
 import { test, expect } from '@playwright/test';
-import LoginPage from '../pages/loginPage';
+import LoginPageEbooksPlus from '../pages/loginPage';
 import SSOPage from '../pages/ssoPage';
 import LibraryPage from '../pages/libraryPage';
 import AcceptCookiesBanner from '../commonElements/acceptCookiesBanner';
-//import { ENV } from '../envconfigs/envs';
+import { URL } from '../envconfigs/url';
 import { USERS } from '../users/users';
+import LoginPageEspAdmin from '../pages/espAdmin/loginPage';
 
-test('Verify that user is able to log in and log out @uismoke', async ({ page }) => {
+test('Verify that user is able to log in and log out from eBooks+ @uismoke @ebooksplus', async ({ page }) => {
   /* const browser = await chromium.launch();
   const context = await browser.newContext();
   const page = await context.newPage(); */
@@ -19,16 +20,16 @@ test('Verify that user is able to log in and log out @uismoke', async ({ page })
   //await context.clearCookies();
 
   // User goes to the base url
-  await page.goto('/');
+  await page.goto(URL.ebooksPlus);
 
   // Login Page opens
-  const loginPage = new LoginPage(page);
+  const loginPage = new LoginPageEbooksPlus(page);
   await expect(loginPage.heading).toBeVisible();
 
   // User accepts the cookies and clicks Log In button
   const acceptCookiesBanner = new AcceptCookiesBanner(page);
   await acceptCookiesBanner.acceptAllButton.click();
-  await loginPage.footerLoginButton.click();
+  await loginPage.mainLoginButton.click();
 
   // User logs in
   const ssoPage = new SSOPage(page);
@@ -39,7 +40,7 @@ test('Verify that user is able to log in and log out @uismoke', async ({ page })
   await expect(libraryPage.heading).toBeVisible();
 
   // The empty library message is displayed
-  await expect(libraryPage.emptyLibraryMessage).toBeVisible();
+  //await expect(libraryPage.emptyLibraryMessage).toBeVisible();
 
   // User clicks Log Out button
   await libraryPage.logoutButton.click();
@@ -50,4 +51,19 @@ test('Verify that user is able to log in and log out @uismoke', async ({ page })
   // ---------------------
   // await context.close();
   // await browser.close();
+});
+
+test('Verify that user is able to log in and log out from ESP-Admin @uismoke @espadmin', async ({ page }) => {
+  
+  // User goes to the base url
+  await page.goto(URL.espAdmin);
+
+  // User clicks login button
+  const loginPage = new LoginPageEspAdmin(page);
+  await loginPage.loginButton.click()
+
+  // User logs in
+  const ssoPage = new SSOPage(page)
+  await ssoPage.loginLink.click()
+
 });

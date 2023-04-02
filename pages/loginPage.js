@@ -1,4 +1,4 @@
-export default class LoginPage {
+export default class LoginPageEbooksPlus {
   constructor(page) {
     this.page = page;
 
@@ -18,8 +18,17 @@ export default class LoginPage {
     this.mainLoginButton = loginButtons.nth(1)
     this.footerLoginButton = loginButtons.nth(2) */
 
-    this.headerLoginButton = page.getByTestId('header-navigation').getByTestId('login-btn')
-    this.mainLoginButton = page.locator("//div[@class='login-button-group']").getByTestId('login-btn').first()
-    this.footerLoginButton = page.locator("//div[@class='login-button-group']").getByTestId('login-btn').last()
+    const loginButton = page.getByTestId('login-btn')
+    const loginButtonGroup = page.locator('.login-button-group')
+    const headerNav = page.getByTestId('header-navigation')
+    const footerNav = page.locator('.footer-buttons')
+
+    /* this.headerLoginButton = loginButton.first()
+    this.mainLoginButton = loginButton.nth(1)
+    this.footerLoginButton = loginButton.last() */
+
+    this.headerLoginButton = headerNav.locator(loginButton)
+    this.mainLoginButton = loginButtonGroup.first().locator(loginButton)
+    this.footerLoginButton = footerNav.locator(loginButton)
   }
 }

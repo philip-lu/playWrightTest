@@ -1,5 +1,11 @@
 name: RunTests_On_Demand
-on: [workflow_dispatch]
+on: 
+  workflow_dispatch:
+    inputs: 
+      environment:
+        description: dev, qa or prod?
+        required: true
+        type: string
 jobs:
   tests-run:
     timeout-minutes: 60
@@ -19,7 +25,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
       - name: Run Playwright tests
-        run: npm run test:qa
+        run: npm run test:${{ inputs.environment }}
       - uses: actions/upload-artifact@v3
         if: always()
         with:

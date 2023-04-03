@@ -7,7 +7,7 @@ import { URL } from '../envconfigs/url';
 import { USERS } from '../users/users';
 import LoginPageEspAdmin from '../pages/espAdmin/loginPage';
 
-test('Verify that user is able to log in and log out from eBooks+ @uismoke @ebooksplus', async ({ page }) => {
+test('Verify that user is able to log in and log out from eBooks+ @uismoke @ebooks', async ({ page }) => {
   /* const browser = await chromium.launch();
   const context = await browser.newContext();
   const page = await context.newPage(); */
@@ -20,7 +20,7 @@ test('Verify that user is able to log in and log out from eBooks+ @uismoke @eboo
   //await context.clearCookies();
 
   // User goes to the base url
-  await page.goto(URL.ebooksPlus);
+  await page.goto(URL.ebooks);
 
   // Login Page opens
   const loginPage = new LoginPageEbooksPlus(page);

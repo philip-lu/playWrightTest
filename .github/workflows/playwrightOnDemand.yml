@@ -23,7 +23,7 @@ jobs:
         run: npm ci
 
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: npx playwright install --with-deps msedge
       - name: Run Playwright tests
         run: npm run test:${{ inputs.environment }}
       - uses: actions/upload-artifact@v3

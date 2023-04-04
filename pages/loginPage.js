@@ -4,7 +4,7 @@ export default class LoginPageEbooksPlus {
 
     //Page header
     this.heading = page.getByRole('heading', {
-      name: 'Welcome to eBooks+'
+      name: 'Welcome'
     });
 
     const loginButton = page.getByTestId('login-btn')

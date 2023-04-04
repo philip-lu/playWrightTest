@@ -14,7 +14,7 @@ test('Verify that user is able to log in and log out from eBooks+ @uismoke @eboo
 
   // Login Page opens
   const loginPage = new LoginPageEbooksPlus(page);
-  await expect(loginPage.heading).toBeVisible();
+  await expect(loginPage.heading).toHaveText("Welcome");
 
   // User accepts the cookies and clicks Log In button
   const acceptCookiesBanner = new AcceptCookiesBanner(page);

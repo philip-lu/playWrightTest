@@ -14,4 +14,4 @@ export default class SsoPage {
     await this.passwordInput.fill(password);
     await this.loginButton.click();
   }
-}
+};

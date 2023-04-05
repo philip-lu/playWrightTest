@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "smoketest:dev": "cross-env test_env=dev npx playwright test --grep '@uismoke' --project=chromium",
-    "smoketest:qa": "cross-env test_env=qa npx playwright test --grep '@uismoke' --project=chromium",
-    "smoketest:prod": "cross-env test_env=prod npx playwright test --grep '@uismoke' --project=chromium"
+    "smoketest:dev": "test_env=dev npx playwright test --grep '@uismoke' --project=chromium",
+    "smoketest:qa": "ebooks_user1_pass='OhceAutoUser1!pass' test_env=qa npx playwright test --grep '@uismoke' --project=chromium",
+    "smoketest:prod": "test_env=prod npx playwright test --grep '@uismoke' --project=chromium"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,6 @@
   "homepage": "https://github.com/elsevier-health/esp-ui-automation-tests#readme",
   "devDependencies": {
     "@playwright/test": "^1.32.1",
-    "cross-env": "^7.0.3",
     "prettier": "^2.8.7"
   }
 }

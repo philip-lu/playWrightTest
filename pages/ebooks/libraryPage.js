@@ -8,4 +8,4 @@ export default class LibraryPage {
     this.logoutButton = page.getByTestId('logout-btn');
     this.emptyLibraryMessage = page.getByTestId('entitlement-list-empty');
   }
-}
+};

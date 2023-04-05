@@ -9,5 +9,5 @@ export const USERS = {
 
   // Ebooks Automation User 3
   EBOOKSUSERNAME_3: 'ohceautouser3@inboxbear.com',
-  EBOOKSPASSWORD_3: `${process.env.ebooks_user3_pass}`, // Should be taken from AWS Secrets
+  EBOOKSPASSWORD_3: `${process.env.ebooks_user3_pass}` // Should be taken from AWS Secrets
 };

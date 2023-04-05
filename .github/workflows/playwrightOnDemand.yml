@@ -10,7 +10,8 @@ jobs:
   tests-run:
     timeout-minutes: 60
     runs-on: windows-latest
-    ##env:
+    env:
+      ebooks_user1_pass: 'OhceAutoUser1!pass'
     ##USERNAME: fufud@inboxbear.com
     ##PASSWORD: ${{ secrets.PASSWORD }}
     steps:

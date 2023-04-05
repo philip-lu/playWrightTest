@@ -1,23 +1,26 @@
 {
-  "name": "playwrighttest",
+  "name": "esp-ui-automation-tests",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:qa": "test_env=qa npx playwright test --grep '@ebooks' --project=chromium",
-    "test:dev": "test_env=dev npx playwright test --grep '@ebooks' --project=chromium"
+    "smoketest:dev": "cross-env test_env=dev npx playwright test --grep '@uismoke' --project=chromium",
+    "smoketest:qa": "cross-env test_env=qa npx playwright test --grep '@uismoke' --project=chromium",
+    "smoketest:prod": "cross-env test_env=prod npx playwright test --grep '@uismoke' --project=chromium"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elsevier-health/esp-ui-automation-tests.git"
+  },
+  "author": "plushchevskyi",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elsevier-health/esp-ui-automation-tests/issues"
+  },
+  "homepage": "https://github.com/elsevier-health/esp-ui-automation-tests#readme",
   "devDependencies": {
-    "@aws-sdk/client-secrets-manager": "^3.303.0",
     "@playwright/test": "^1.32.1",
     "cross-env": "^7.0.3",
     "prettier": "^2.8.7"
-  },
-  "dependencies": {
-    "dotenv": "^16.0.3",
-    "path": "^0.12.7"
   }
 }

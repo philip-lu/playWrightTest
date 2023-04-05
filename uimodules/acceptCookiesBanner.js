@@ -1,4 +1,4 @@
-export default class acceptCookiesBanner {
+export default class AcceptCookiesBanner {
   constructor(page) {
     this.page = page;
     this.acceptAllButton = page.locator('#onetrust-accept-btn-handler');

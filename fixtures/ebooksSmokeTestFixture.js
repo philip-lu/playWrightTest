@@ -1,10 +1,10 @@
-const base = require('@playwright/test');
-const { LoginPageEbooks } = require('@pages/ebooks/loginPage');
-const { AcceptCookiesBanner } = require('@uimodules/acceptCookiesBanner');
-const { SsoPage } = require('@pages/common/ssoPage');
-const { LibraryPage } = require('@pages/ebooks/libraryPage');
+import { base } from '@playwright/test';
+import { LoginPageEbooks } from '@pages/ebooks/loginPage';
+import { AcceptCookiesBanner } from '@uimodules/acceptCookiesBanner';
+import { SsoPage } from '@pages/common/ssoPage';
+import { LibraryPage } from '@pages/ebooks/libraryPage';
 
-exports.test = base.test.extend({
+export default test = base.test.extend({
   loginPage: async ({ page }, use) => {
     const loginPage = new LoginPageEbooks(page);
     await use(loginPage);
@@ -23,4 +23,4 @@ exports.test = base.test.extend({
   }
 });
 
-exports.expect = base.expect;
+export const expect = base.expect;

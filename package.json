@@ -1,25 +1,23 @@
 {
-  "name": "esp-ui-automation-tests",
+  "name": "playwrighttest",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "smoketest:dev": "test_env=dev npx playwright test --grep '@uismoke' --project=chromium",
-    "smoketest:qa": "ebooks_user1_pass='OhceAutoUser1!pass' test_env=qa npx playwright test --grep '@uismoke' --project=chromium",
-    "smoketest:prod": "test_env=prod npx playwright test --grep '@uismoke' --project=chromium"
+    "test": "ebooks_user1_pass='OhceAutoUser1!pass' test_env=qa npx playwright test --grep '@uismoke' --project=chromium",
+    "smoketest:prod": "test_env=prod npx playwright test --grep '@uismoke' --project=chromium",
+    "allure-report": "npx allure generate allure-results -o allure-report --clean && allure open"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/elsevier-health/esp-ui-automation-tests.git"
+    "type": "git"
   },
   "author": "plushchevskyi",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/elsevier-health/esp-ui-automation-tests/issues"
-  },
-  "homepage": "https://github.com/elsevier-health/esp-ui-automation-tests#readme",
   "devDependencies": {
-    "@playwright/test": "^1.32.1",
+    "@playwright/test": "^1.32.2",
+    "allure-commandline": "^2.21.0",
+    "allure-playwright": "^2.1.0",
     "prettier": "^2.8.7"
   }
 }

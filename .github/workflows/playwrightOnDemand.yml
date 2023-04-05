@@ -12,8 +12,7 @@ jobs:
     runs-on: windows-latest
     env:
       ebooks_user1_pass: 'OhceAutoUser1!pass'
-    ##USERNAME: fufud@inboxbear.com
-    ##PASSWORD: ${{ secrets.PASSWORD }}
+      test_env: ${{ inputs.environment }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -24,9 +23,9 @@ jobs:
         run: npm ci
 
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps msedge
+        run: npx playwright install --with-deps chromium
       - name: Run Playwright tests
-        run: test_env=${{ inputs.environment }} npx playwright test --grep '@uismoke' --project='Microsoft Edge'
+        run: npx playwright test --grep '@uismoke' --project=chromium
       - uses: actions/upload-artifact@v3
         if: always()
         with:

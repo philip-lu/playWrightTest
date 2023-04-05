@@ -5,8 +5,8 @@ jobs:
     timeout-minutes: 60
     runs-on: windows-latest
     ##env:
-      ##USERNAME: fufud@inboxbear.com
-      ##PASSWORD: ${{ secrets.PASSWORD }}
+    ##USERNAME: fufud@inboxbear.com
+    ##PASSWORD: ${{ secrets.PASSWORD }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3

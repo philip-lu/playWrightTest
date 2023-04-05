@@ -7,8 +7,41 @@ import { URL } from '../envconfigs/url';
 import { USERS } from '../users/users';
 import LoginPageEspAdmin from '../pages/espAdmin/loginPage';
 
-test('Verify that user is able to log in and log out from eBooks+ @uismoke @ebooks', async ({ page }) => {
+import { SecretsManagerClient, GetSecretValueCommand } from '@aws-sdk/client-secrets-manager';
 
+async function getAWSSecret() {
+  const secret_name = 'admin-qa.studentconsult.es';
+
+  const client = new SecretsManagerClient({
+    region: 'eu-west-1',
+    credentials: {
+      accessKeyId: 'accessKeyId',
+      secretAccessKey: 'secretAccessKey',
+    }
+  });
+  let response;
+  try {
+    response = await client.send(
+      new GetSecretValueCommand({
+        SecretId: secret_name,
+        VersionStage: 'AWSCURRENT' // VersionStage defaults to AWSCURRENT if unspecified
+      })
+    );
+  } catch (error) {
+    throw error;
+  }
+}
+
+test.skip('Get the secret from AWS', async () => {
+  const response = await getAWSSecret();
+  const secret = JSON.parse(response.SecretString);
+  console.log('Response is: ' + response);
+  console.log('AWS Secret is: ' + secret);
+});
+
+test('Verify that user is able to log in and log out from eBooks+ @uismoke @ebooks', async ({
+  page
+}) => {
   // User goes to the base url
   await page.goto(URL.ebooks);
 
@@ -23,7 +56,7 @@ test('Verify that user is able to log in and log out from eBooks+ @uismoke @eboo
 
   // User logs in
   const ssoPage = new SSOPage(page);
-  await ssoPage.logIn(USERS.USERNAME_1, USERS.PASSWORD_1)
+  await ssoPage.logIn(USERS.USERNAME_1, USERS.PASSWORD_1);
 
   // Library page opens
   const libraryPage = new LibraryPage(page);
@@ -39,17 +72,17 @@ test('Verify that user is able to log in and log out from eBooks+ @uismoke @eboo
   await expect(loginPage.heading).toBeVisible();
 });
 
-test('Verify that user is able to log in and log out from ESP-Admin @uismoke @espadmin', async ({ page }) => {
-  
+test('Verify that user is able to log in and log out from ESP-Admin @uismoke @espadmin', async ({
+  page
+}) => {
   // User goes to the base url
   await page.goto(URL.espAdmin);
 
   // User clicks login button
   const loginPage = new LoginPageEspAdmin(page);
-  await loginPage.loginButton.click()
+  await loginPage.loginButton.click();
 
   // User logs in
-  const ssoPage = new SSOPage(page)
-  await ssoPage.loginLink.click()
-
+  const ssoPage = new SSOPage(page);
+  await ssoPage.loginLink.click();
 });

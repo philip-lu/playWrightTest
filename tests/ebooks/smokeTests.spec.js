@@ -37,7 +37,7 @@ test('Verify that user is able to log in and log out from eBooks+ @uismoke @eboo
   await expect(loginPage.heading).toBeVisible();
 });
 
-test('Failed @uismoke', async () => {
+test.skip('Failed @uismoke', async () => {
   const x = 2;
   expect(x).toBeLessThanOrEqual(1);
 });

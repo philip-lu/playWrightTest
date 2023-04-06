@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Apr 06 09:43:54 GMT 2023","Thu Apr 06 09:44:09 GMT 2023","15108","chromium","","","","","OH-57: Successfully submit the Log In form on the SSO Auth0 @uismoke @allure @nrt",""
+"passed","Thu Apr 06 09:44:24 GMT 2023","Thu Apr 06 09:44:51 GMT 2023","27076","webkit","","","","","OH-57: Successfully submit the Log In form on the SSO Auth0 @uismoke @allure @nrt",""
+"passed","Thu Apr 06 09:44:52 GMT 2023","Thu Apr 06 09:45:25 GMT 2023","32907","Microsoft Edge","","","","","OH-57: Successfully submit the Log In form on the SSO Auth0 @uismoke @allure @nrt",""
+"passed","Thu Apr 06 09:44:10 GMT 2023","Thu Apr 06 09:44:23 GMT 2023","13176","firefox","","","","","OH-57: Successfully submit the Log In form on the SSO Auth0 @uismoke @allure @nrt",""

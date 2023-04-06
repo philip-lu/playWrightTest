@@ -5,8 +5,11 @@ import SSOPage from '@pages/common/ssoPage';
 import LoginPageEbooks from '@pages/ebooks/loginPage';
 import LibraryPage from '@pages/ebooks/libraryPage';
 import AcceptCookiesBanner from '@uimodules/acceptCookiesBanner';
+import { allure } from 'allure-playwright';
 
 test('OH-57: Successfully submit the Log In form on the SSO Auth0 @uismoke @allure @nrt', async ({ page }) => {
+  allure.label('OH-57', 'Successfully submit the Log In form on the SSO Auth0');
+
   // User goes to the base url
   await page.goto(URL.ebooks);
 

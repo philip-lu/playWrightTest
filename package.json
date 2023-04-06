@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "smoketest:dev": "test_env=dev npx playwright test --grep '@uismoke' --project=chromium",
-    "test": "ebooks_user1_pass='OhceAutoUser1!pass' test_env=qa npx playwright test --grep '@uismoke' --project=chromium",
+    "test": "ebooks_user1_pass='OhceAutoUser1!pass' test_env=qa npx playwright test --grep '@nrt'",
     "smoketest:prod": "test_env=prod npx playwright test --grep '@uismoke' --project=chromium",
     "allure-report": "npx allure generate allure-results -o allure-report --clean && allure open"
   },

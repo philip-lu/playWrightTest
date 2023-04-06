@@ -6,7 +6,7 @@ import LoginPageEbooks from '@pages/ebooks/loginPage';
 import LibraryPage from '@pages/ebooks/libraryPage';
 import AcceptCookiesBanner from '@uimodules/acceptCookiesBanner';
 
-test('Verify that user is able to log in and log out from eBooks+ @uismoke @ebooksplus', async ({ page }) => {
+test('OH-57: Successfully submit the Log In form on the SSO Auth0 @uismoke @allure @nrt', async ({ page }) => {
   // User goes to the base url
   await page.goto(URL.ebooks);
 
@@ -37,12 +37,12 @@ test('Verify that user is able to log in and log out from eBooks+ @uismoke @eboo
   await expect(loginPage.heading).toBeVisible();
 });
 
-test.skip('Failed @uismoke', async () => {
+test('Failed @allure', async () => {
   const x = 2;
   expect(x).toBeLessThanOrEqual(1);
 });
 
-test('Pass @uismoke', async () => {
+test('Pass @allure', async () => {
   const x = 2;
   expect(x).toBeLessThanOrEqual(2);
 });

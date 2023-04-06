@@ -9,6 +9,7 @@ import { allure } from 'allure-playwright';
 
 test('OH-57: Successfully submit the Log In form on the SSO Auth0 @uismoke @allure @nrt', async ({ page }) => {
   allure.label('OH-57', 'Successfully submit the Log In form on the SSO Auth0');
+  allure.suite('NRT 04/06/2023');
 
   // User goes to the base url
   await page.goto(URL.ebooks);

@@ -8,18 +8,18 @@ module.exports = defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: [
     [process.env.CI ? 'github' : 'list'],
-    [
+    /* [
       'allure-playwright',
       {
         outputFolder: 'allure-results',
         suiteTitle: false
       }
-    ],
+    ], */
     [
       'monocart-reporter',
       {
         name: 'My Test Report',
-        outputFile: './monocart-results/report.html',
+        outputFile: './monocart-results/index.html',
         trend: './monocart-results/report.json'
       }
     ]

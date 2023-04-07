@@ -17,7 +17,7 @@ test('OH-57: Successfully submit the Log In form on the SSO Auth0 @uismoke @allu
 
   // Login Page opens
   const loginPage = new LoginPageEbooks(page);
-  await expect(loginPage.heading).toBeVisible();
+  await expect(libraryPage.heading).toBeVisible();
 
   // User accepts the cookies and clicks Log In button
   const acceptCookiesBanner = new AcceptCookiesBanner(page);

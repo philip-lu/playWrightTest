@@ -38,12 +38,12 @@ test('OH-57: Successfully submit the Log In form on the SSO Auth0 @uismoke @nrt'
   await expect(loginPage.heading).toBeVisible();
 });
 
-test('Failed @nrt', async () => {
+test.skip('Failed @nrt', async () => {
   const x = 2;
   expect(x).toBeLessThanOrEqual(1);
 });
 
-test('Pass @nrt', async () => {
+test.skip('Pass @nrt', async () => {
   const x = 2;
   expect(x).toBeLessThanOrEqual(2);
 });

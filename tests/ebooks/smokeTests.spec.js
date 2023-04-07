@@ -5,10 +5,9 @@ import { USERS } from '@constants/users';
 import LoginPageEbooks from '@pages/ebooks/loginPage';
 import LibraryPage from '@pages/ebooks/libraryPage';
 import AcceptCookiesBanner from '@uimodules/acceptCookiesBanner';
-import { allure } from 'allure-playwright';
 //import { test, expect } from '@fixtures/ebooksSmokeTestFixture';
 
-test('OH-57: Successfully submit the Log In form on the SSO Auth0 @uismoke @allure @nrt', async ({ page }) => {
+test('OH-57: Successfully submit the Log In form on the SSO Auth0 @uismoke @nrt', async ({ page }) => {
   // User goes to the base url
   await page.goto(URL.ebooks);
 
@@ -39,12 +38,12 @@ test('OH-57: Successfully submit the Log In form on the SSO Auth0 @uismoke @allu
   await expect(loginPage.heading).toBeVisible();
 });
 
-test('Failed @allure @nrt', async () => {
+test('Failed @nrt', async () => {
   const x = 2;
   expect(x).toBeLessThanOrEqual(1);
 });
 
-test('Pass @allure @nrt', async () => {
+test('Pass @nrt', async () => {
   const x = 2;
   expect(x).toBeLessThanOrEqual(2);
 });

@@ -20,7 +20,8 @@ module.exports = defineConfig({
       {
         name: 'My Test Report',
         outputFile: './test-results/index.html',
-        trend: './test-results/report.json'
+        trend: './test-results/report.json',
+        attachmentPath: './test-results/'
       }
     ]
   ],

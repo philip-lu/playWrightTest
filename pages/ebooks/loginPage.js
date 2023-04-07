@@ -1,3 +1,5 @@
+import SsoPage from '@pages/common/ssoPage';
+
 export default class LoginPage {
   constructor(page) {
     this.page = page;
@@ -14,5 +16,10 @@ export default class LoginPage {
     this.headerLoginButton = headerNav.locator(loginButton);
     this.mainLoginButton = loginButtonGroup.first().locator(loginButton);
     this.footerLoginButton = footerNav.locator(loginButton);
+  }
+
+  async logIn(username, password) {
+    const ssoPage = new SsoPage(this.page);
+    await ssoPage.logIn(username, password);
   }
 }

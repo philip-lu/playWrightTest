@@ -1,11 +1,12 @@
 import { test, expect } from '@playwright/test';
 import { URL } from '@constants/url';
 import { USERS } from '@constants/users';
-import SSOPage from '@pages/common/ssoPage';
+//import SSOPage from '@pages/common/ssoPage';
 import LoginPageEbooks from '@pages/ebooks/loginPage';
 import LibraryPage from '@pages/ebooks/libraryPage';
 import AcceptCookiesBanner from '@uimodules/acceptCookiesBanner';
 import { allure } from 'allure-playwright';
+//import { test, expect } from '@fixtures/ebooksSmokeTestFixture';
 
 test('OH-57: Successfully submit the Log In form on the SSO Auth0 @uismoke @allure @nrt', async ({ page }) => {
   allure.label('OH-57', 'Successfully submit the Log In form on the SSO Auth0');
@@ -24,8 +25,8 @@ test('OH-57: Successfully submit the Log In form on the SSO Auth0 @uismoke @allu
   await loginPage.mainLoginButton.click();
 
   // User logs in
-  const ssoPage = new SSOPage(page);
-  await ssoPage.logIn(USERS.EBOOKSUSERNAME_1, USERS.EBOOKSPASSWORD_1);
+  //const ssoPage = new SSOPage(page);
+  await loginPage.logIn(USERS.EBOOKSUSERNAME_1, USERS.EBOOKSPASSWORD_1);
 
   // Library page opens
   const libraryPage = new LibraryPage(page);
@@ -41,12 +42,12 @@ test('OH-57: Successfully submit the Log In form on the SSO Auth0 @uismoke @allu
   await expect(loginPage.heading).toBeVisible();
 });
 
-test('Failed @allure', async () => {
+test('Failed @allure @nrt', async () => {
   const x = 2;
   expect(x).toBeLessThanOrEqual(1);
 });
 
-test('Pass @allure', async () => {
+test('Pass @allure @nrt', async () => {
   const x = 2;
   expect(x).toBeLessThanOrEqual(2);
 });

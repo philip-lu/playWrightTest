@@ -4,4 +4,5 @@ node_modules/
 /allure-report/
 /playwright-report/
 /playwright/.cache/
+/monocart-results/
 .DS_Store

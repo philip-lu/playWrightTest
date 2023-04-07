@@ -14,6 +14,14 @@ module.exports = defineConfig({
         outputFolder: 'allure-results',
         suiteTitle: false
       }
+    ],
+    [
+      'monocart-reporter',
+      {
+        name: 'My Test Report',
+        outputFile: './monocart-results/report.html',
+        trend: './monocart-results/report.json'
+      }
     ]
   ],
   use: {

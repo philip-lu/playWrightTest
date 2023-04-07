@@ -19,8 +19,8 @@ module.exports = defineConfig({
       'monocart-reporter',
       {
         name: 'My Test Report',
-        outputFile: './monocart-results/index.html',
-        trend: './monocart-results/report.json'
+        outputFile: './test-results/index.html',
+        trend: './test-results/report.json'
       }
     ]
   ],

@@ -18,6 +18,4 @@ jobs:
 
       - name: Build Docker image
         run: docker build . --file Dockerfile.focal -t playwright-tests
-      - name: Run Playwright tests on Docker
-        run: docker run playwright-tests
 

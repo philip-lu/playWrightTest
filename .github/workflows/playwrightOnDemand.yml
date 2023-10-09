@@ -17,7 +17,7 @@ jobs:
           node-version: 16
 
       - name: Run Playwright tests
-        uses: docker://mcr.microsoft.com/playwright:v1.34.3-jammy
+        uses: docker://mcr.microsoft.com/playwright:v1.38.0-jammy
         with:
           args: test_env=${{ inputs.environment }} npx playwright test --grep '@uismoke' --project=chromium
 

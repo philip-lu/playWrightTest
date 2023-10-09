@@ -9,7 +9,7 @@ on:
 jobs:
   tests-run:
     timeout-minutes: 60
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     env:
       ebooks_user1_pass: 'OhceAutoUser1!pass'
       test_env: ${{ inputs.environment }}

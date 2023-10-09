@@ -6,4 +6,4 @@ WORKDIR /tests
 RUN npm install
 RUN npx @playwright/test install
 RUN npx playwright install --with-deps
-RUN npx playwright test
+RUN test_env=dev npx playwright test --project=chromium

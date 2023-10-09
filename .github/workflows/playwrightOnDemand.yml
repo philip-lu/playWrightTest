@@ -9,24 +9,15 @@ on:
 jobs:
   tests-run:
     timeout-minutes: 60
-    runs-on: windows-latest
-    container: 
-      image: mcr.microsoft.com/playwright:v1.38.0-jammy
-    ##env:
-    ##USERNAME: fufud@inboxbear.com
-    ##PASSWORD: ${{ secrets.PASSWORD }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 16
 
-      - name: Run Playwright tests             
-        run: test_env=${{ inputs.environment }} npx playwright test --grep '@uismoke' --project=chromium
- 
-      - uses: actions/upload-artifact@v3
-        if: always()
+      - name: Run Playwright tests
+        uses: docker://mcr.microsoft.com/playwright:v1.34.3-jammy
         with:
-          name: test-results
-          path: test-results/
-          retention-days: 30
+          args: test_env=${{ inputs.environment }} npx playwright test --grep '@uismoke' --project=chromium
+

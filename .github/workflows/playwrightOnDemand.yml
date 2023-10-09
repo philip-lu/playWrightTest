@@ -17,5 +17,8 @@ jobs:
           node-version: 16
 
       - name: Build Docker image
-        run: docker build . --file Dockerfile.focal -t playwright-tests
+        run: docker build . --file Dockerfile.focal -t playwright-image
+
+      - name: WTF
+        run: docker run -d --name playwrightcontainer playwright-image
 

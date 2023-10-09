@@ -10,6 +10,8 @@ jobs:
   tests-run:
     timeout-minutes: 60
     runs-on: windows-latest
+    container: 
+      image: mcr.microsoft.com/playwright:v1.38.0-jammy
     ##env:
     ##USERNAME: fufud@inboxbear.com
     ##PASSWORD: ${{ secrets.PASSWORD }}
@@ -19,10 +21,8 @@ jobs:
         with:
           node-version: 16
 
-      - name: Run Playwright tests
-        uses: docker://mcr.microsoft.com/playwright:v1.34.3-jammy
-        with:
-          args: test_env=${{ inputs.environment }} npx playwright test --grep '@uismoke' --project=chromium
+      - name: Run Playwright tests             
+        run: test_env=${{ inputs.environment }} npx playwright test --grep '@uismoke' --project=chromium
  
       - uses: actions/upload-artifact@v3
         if: always()

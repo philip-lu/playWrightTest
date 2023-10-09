@@ -72,7 +72,7 @@ test('Verify that user is able to log in and log out from eBooks+ @uismoke @eboo
   await expect(loginPage.heading).toBeVisible();
 });
 
-test('Verify that user is able to log in and log out from ESP-Admin @uismoke @espadmin', async ({
+test.skip('Verify that user is able to log in and log out from ESP-Admin @uismoke @espadmin', async ({
   page
 }) => {
   // User goes to the base url

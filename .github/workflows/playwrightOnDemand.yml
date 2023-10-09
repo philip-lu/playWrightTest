@@ -9,7 +9,7 @@ on:
 jobs:
   tests-run:
     timeout-minutes: 60
-    runs-on: windows-latest
+    runs-on: ubuntu
     ##env:
     ##USERNAME: fufud@inboxbear.com
     ##PASSWORD: ${{ secrets.PASSWORD }}
@@ -19,13 +19,11 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps msedge
       - name: Run Playwright tests
-        run: test_env=${{ inputs.environment }} npx playwright test --grep '@uismoke' --project='Microsoft Edge'
+        uses: docker://mcr.microsoft.com/playwright:v1.34.3-jammy
+        with:
+          args: test_env=${{ inputs.environment }} npx playwright test --grep '@uismoke' --project=chromium
+ 
       - uses: actions/upload-artifact@v3
         if: always()
         with:

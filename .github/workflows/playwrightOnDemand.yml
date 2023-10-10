@@ -10,6 +10,8 @@ jobs:
   tests-run:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      test_env: ${{ inputs.environment }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3

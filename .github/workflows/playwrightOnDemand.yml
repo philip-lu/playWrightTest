@@ -18,9 +18,7 @@ jobs:
           node-version: 16
 
       - name: Build Docker image
-        env:
-          test_env: ${{ inputs.environment }}
-        run: docker build . --file Dockerfile -t playwright-image
+        run: docker build . --file Dockerfile -t playwright-image --build-arg test_env=${{ inputs.environment }}
 
       - name: WTF
         run: docker run -d --name playwrightcontainer playwright-image

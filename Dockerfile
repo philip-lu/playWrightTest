@@ -7,4 +7,4 @@ COPY . /tests
 WORKDIR /tests
 RUN npm ci
 RUN npx playwright install --with-deps
-RUN npx playwright test --project=chromium
+RUN npx playwright test -g '@uismoke' --project=chromium

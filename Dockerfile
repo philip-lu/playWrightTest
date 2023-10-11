@@ -5,7 +5,6 @@ USER root
 RUN mkdir /tests
 COPY . /tests
 WORKDIR /tests
-RUN npm install
-RUN npx @playwright/test install
+RUN npm ci
 RUN npx playwright install --with-deps
 RUN npx playwright test --project=chromium
